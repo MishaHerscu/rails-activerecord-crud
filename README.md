@@ -80,7 +80,7 @@ We'll use **[rails console](http://guides.rubyonrails.org/command_line.html#rail
 
 ```bash
 $ rails db
-psql: FATAL:  database "rails-activerecord-crud_development" does not exist
+psql: FATAL:  database 'rails-activerecord-crud_development' does not exist
 $
 ```
 
@@ -239,7 +239,7 @@ Let's remove the cities that don't have a region.
 
 ### Lab: deleting rows
 
-Remove pets born before 1996 then people taller than 5'10".
+Remove pets born before 1996 then people taller than 5'10'.
 
 ## [License](LICENSE)
 

@@ -50,7 +50,7 @@ RSpec.describe UsersController do
       post :signin, { credentials: user_params }, format: :json
 
       @token = JSON.parse(response.body)['user']['token']
-      request.env['HTTP_AUTHORIZATION'] = "Token token=#{@token}"
+      request.env['HTTP_AUTHORIZATION'] = 'Token token=#{@token}'
 
       @user_id = JSON.parse(response.body)['user']['id']
     end

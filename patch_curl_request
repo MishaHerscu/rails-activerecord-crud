@@ -1,0 +1,8 @@
+curl --include --request PATCH http://localhost:3000/albums/8 \
+   --header 'Content-Type: application/json' \
+   --data '{
+       'album': {
+            'title': 'Currents Update',
+            'artist': 'Green Day'
+       }
+   }'

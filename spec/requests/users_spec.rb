@@ -53,7 +53,7 @@ RSpec.describe 'Authentication API' do
   context 'while signed in' do
     def headers
       {
-        'HTTP_AUTHORIZATION' => "Token token=#{@token}"
+        'HTTP_AUTHORIZATION' => 'Token token=#{@token}'
       }
     end
 
@@ -74,7 +74,7 @@ RSpec.describe 'Authentication API' do
       end
 
       it 'changes password' do
-        patch "/change-password/#{@user_id}",
+        patch '/change-password/#{@user_id}',
               { passwords: new_password_params },
               headers
 
@@ -85,15 +85,15 @@ RSpec.describe 'Authentication API' do
 
     describe 'DELETE /sign-out/:id' do
       it 'is successful' do
-        delete "/sign-out/#{@user_id}", nil, headers
+        delete '/sign-out/#{@user_id}', nil, headers
 
         expect(response).to be_success
         expect(response.body).to be_empty
       end
 
       it 'expires the token' do
-        delete "/sign-out/#{@user_id}", nil, headers
-        delete "/sign-out/#{@user_id}", nil, headers
+        delete '/sign-out/#{@user_id}', nil, headers
+        delete '/sign-out/#{@user_id}', nil, headers
 
         expect(response).not_to be_success
       end
@@ -117,7 +117,7 @@ RSpec.describe 'Users API' do
   context 'when authenticated' do
     def headers
       {
-        'HTTP_AUTHORIZATION' => "Token token=#{@token}"
+        'HTTP_AUTHORIZATION' => 'Token token=#{@token}'
       }
     end
 
@@ -144,7 +144,7 @@ RSpec.describe 'Users API' do
 
     describe 'GET /users/:id' do
       it 'is successful' do
-        get "/users/#{@user_id}", nil, headers
+        get '/users/#{@user_id}', nil, headers
 
         expect(response).to be_success
 
@@ -167,7 +167,7 @@ RSpec.describe 'Users API' do
 
     describe 'GET /users/:id' do
       it 'is not successful' do
-        get "/users/#{@user_id}"
+        get '/users/#{@user_id}'
 
         expect(response).not_to be_success
       end

@@ -10,7 +10,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # %w(antony jeff matt jason).each do |name|
-#   email = "#{name}@#{name}.com"
+#   email = '#{name}@#{name}.com'
 #   next if User.exists? email: email
 #   User.create!(email: email,
 #                password: 'abc123',
